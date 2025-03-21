@@ -18,16 +18,7 @@ const mockCardData = [
   },
 ];
 
-const searchIndex = () => {
-  const dataArray = Array.from({ length: 10000000000 }, (_, i) => i);
-  const isFound = dataArray.find((item) => item === 10000000000);
-  return isFound;
-};
-
 function App() {
-  useEffect(() => {
-    searchIndex();
-  }, []);
   return (
     <div className="app-container">
       <div className="small-container">
