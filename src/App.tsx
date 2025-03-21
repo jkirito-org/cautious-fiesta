@@ -2,6 +2,21 @@ import "./App.css";
 import { Card } from "./components/Base/Card";
 import Input from "./components/Base/Input";
 
+const mockCardData = [
+  {
+    header: "Card Header 1",
+    content: "Card content 1",
+  },
+  {
+    header: "Card Header 2",
+    content: "Card content 2",
+  },
+  {
+    header: "Card Header 3",
+    content: "Card content 3",
+  },
+];
+
 function App() {
   return (
     <div className="app-container">
@@ -13,9 +28,11 @@ function App() {
           onChange={(value) => console.log(value)}
           helperText="Username must be at least 3 characters"
         />
-        <Card header="Card Header">
-          <p>Card content</p>
-        </Card>
+        {mockCardData.map((card) => (
+          <Card key={card.header} header={card.header}>
+            <p>{card.content}</p>
+          </Card>
+        ))}
       </div>
     </div>
   );
