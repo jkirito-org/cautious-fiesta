@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./App.css";
 import { Card } from "./components/Base/Card";
 import Input from "./components/Base/Input";
@@ -17,7 +18,16 @@ const mockCardData = [
   },
 ];
 
+const searchIndex = () => {
+  const dataArray = Array.from({ length: 10000000000 }, (_, i) => i);
+  const isFound = dataArray.find((item) => item === 10000000000);
+  return isFound;
+};
+
 function App() {
+  useEffect(() => {
+    searchIndex();
+  }, []);
   return (
     <div className="app-container">
       <div className="small-container">
